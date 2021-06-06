@@ -3,7 +3,7 @@ import { AuthContext } from "../contexts/AuthContext"
 import styles from '../../styles/global.module.css'
 import { GetServerSideProps } from "next"
 import { parseCookies } from "nookies"
-import { withSSRGuest } from "../../utils/withSSRGuest"
+import { WithSSRGuest } from "../../utils/withSSRGuest"
 
 export default function Home() {
   const [email, setEmail] = useState('')
@@ -32,7 +32,7 @@ export default function Home() {
   )
 }
 
-export const getServerSideProps = withSSRGuest(async (ctx) => {
+export const getServerSideProps = WithSSRGuest(async (ctx) => {
   return {
     props: {
 
